@@ -60,11 +60,11 @@ app.use("/api", calenderRoutes);
 app.use("/api/mail", mailRoutes);
 
 // Serve static files from the React frontend
-app.use(express.static("./frontend/dist")); // or "../frontend/dist" if "dist" is your build output
+app.use(express.static("./frontend/build")); // or "../frontend/dist" if "dist" is your build output
 
 // Catch-all route to serve index.html for any non-API requests
 app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
+  res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
 });
 
 const port = process.env.PORT || 3000;
