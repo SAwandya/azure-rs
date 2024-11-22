@@ -11,7 +11,8 @@ passport.use(
     {
       clientID: FACEBOOK_APP_ID,
       clientSecret: FACEBOOK_APP_SECRET,
-      callbackURL: "http://localhost:3000/api/auth/facebook/callback",
+      callbackURL:
+        "https://azure-reservation-app.azurewebsites.net/api/auth/facebook/callback",
       profileFields: ["id", "displayName", "emails"], // Make sure "emails" is listed
     },
     async (accessToken, refreshToken, profile, done) => {
