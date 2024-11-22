@@ -52,7 +52,7 @@ const Login = () => {
   }, [location, navigate]);
 
   const handleLogin = () => {
-    window.location.href = `http://localhost:3000/api/auth/google`;
+    window.location.href = `https://azure-reservation-app.azurewebsites.net/api/auth/google`;
   };
 
   return (
