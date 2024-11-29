@@ -90,7 +90,7 @@ const MyBooking = () => {
   const fetchOrders = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/bookings/customer",
+        "https://azure-reservation-app.azurewebsites.net/api/bookings/customer",
         { customerEmail }
       );
       setOrders(
@@ -121,7 +121,7 @@ const MyBooking = () => {
       }).then(async (result) => {
         if (result.isConfirmed) {
           const res = await axios.delete(
-            `http://localhost:3000/api/bookings/${bookingId}`
+            `https://azure-reservation-app.azurewebsites.net/api/bookings/${bookingId}`
           );
           console.log("Booking canceled:", res.data);
           fetchOrders();

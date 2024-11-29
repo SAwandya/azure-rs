@@ -17,7 +17,9 @@ const TheaterForm = () => {
   useEffect(() => {
     const fetchTheaters = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/theaters"); // Replace with your API endpoint
+        const response = await axios.get(
+          "https://azure-reservation-app.azurewebsites.net/api/theaters"
+        ); // Replace with your API endpoint
         setTheaters(response.data);
         console.log("Theaters:", response.data);
       } catch (err) {

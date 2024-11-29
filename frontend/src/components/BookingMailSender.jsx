@@ -150,7 +150,7 @@ const BookingMailSender = () => {
       }).then(async (result) => {
         if (result.isConfirmed) {
           await axios
-            .post("http://localhost:3000/api/mail", {
+            .post("https://azure-reservation-app.azurewebsites.net/api/mail", {
               emails,
               subject,
               message,
@@ -162,7 +162,8 @@ const BookingMailSender = () => {
                 icon: "success",
                 color: "#e2e8f0",
               });
-            }).catch((error) => {
+            })
+            .catch((error) => {
               console.error("Error sending emails:", error);
             });
         }

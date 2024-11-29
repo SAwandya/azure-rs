@@ -58,7 +58,9 @@ const AllBookings = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/bookings");
+        const response = await axios.get(
+          "https://azure-reservation-app.azurewebsites.net/api/bookings"
+        );
         setOrders(response.data);
       } catch (error) {
         console.error("Error fetching orders:", error);

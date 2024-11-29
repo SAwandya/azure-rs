@@ -62,7 +62,9 @@ const UsersTable = () => {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/user");
+      const response = await axios.get(
+        "https://azure-reservation-app.azurewebsites.net/api/user"
+      );
       setUsers(response.data);
     } catch (error) {
       console.error("Error fetching users:", error);
@@ -84,7 +86,9 @@ const UsersTable = () => {
 
     if (result.isConfirmed) {
       try {
-        await axios.put(`http://localhost:3000/api/users/${id}`);
+        await axios.put(
+          `https://azure-reservation-app.azurewebsites.net/api/users/${id}`
+        );
         Swal.fire({
           title: "Deleted!",
           text: "The user has been deleted.",
