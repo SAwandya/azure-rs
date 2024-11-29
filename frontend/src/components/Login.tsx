@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { Box, Button } from "@mui/material";
 import { styled } from "@mui/system";
 import googleIcon from "../assets/googleIcon.png";
+import { useAuth } from "../Context/AuthContext";
 
 const GoogleButton = styled(Button)({
   width: "100%",
@@ -42,11 +43,13 @@ const Login = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
+  const {login} = useAuth();
+
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const token = params.get("token");
     if (token) {
-      localStorage.setItem("token", token);
+      login(token);
       navigate("/");
     }
   }, [location, navigate]);
