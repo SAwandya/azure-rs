@@ -141,7 +141,7 @@ const SignInForm = () => {
         });
         login(response);
 
-        console.log("Storage error", getCurrentUser().role);
+        console.log("Current user role: ", getCurrentUser().role);
 
         if (getCurrentUser().role === "admin") {
           navigate("/Dashboard");
@@ -154,7 +154,7 @@ const SignInForm = () => {
     }
   };
 
-  if (authToken) return <Navigate to="/" replace={true} />;
+  // if (authToken) return <Navigate to="/" replace={true} />;
 
   return (
     <>
