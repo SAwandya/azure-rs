@@ -57,7 +57,7 @@ const darkTheme = createTheme({
 
 const NewDashboard = () => {
 
-  const { authToken, isLogedIn } = useAuth();
+  const { authToken } = useAuth();
 
   const [activeButton, setActiveButton] = useState("home");
 
