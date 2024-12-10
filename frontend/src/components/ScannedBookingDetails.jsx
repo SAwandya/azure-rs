@@ -66,7 +66,7 @@ const ScannedBookingDetails = () => {
       }).then(async (result) => {
         if (result.isConfirmed) {
           const res = await axios.delete(
-            `https://azure-reservation-app.azurewebsites.net/api/bookings/${bookingId}`
+            `http://localhost:3000/api/bookings/${bookingId}`
           );
           refetch();
           console.log("Booking canceled:", res.data);

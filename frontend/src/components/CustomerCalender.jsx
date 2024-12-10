@@ -129,7 +129,7 @@ const CustomCalendar = () => {
     const fetchShowtimes = async () => {
       try {
         const response = await axios.get(
-          `https://azure-reservation-app.azurewebsites.net/api/showtimes/events/${theaterId}`
+          `http://localhost:3000/api/showtimes/events/${theaterId}`
         );
         setShowtimes(response.data);
         console.log("Showtimes:", response.data);

@@ -53,7 +53,7 @@ const ConfirmButton = styled(Button)({
 const bookSeat = async (bookingDataStr, userId, accessToken) => {
   try {
     const response = await axios.post(
-      "https://azure-reservation-app.azurewebsites.net/api/create-calendar-event",
+      "http://localhost:3000/api/create-calendar-event",
       {
         userId: userId,
         bookingDate: bookingDataStr.bookingDate,

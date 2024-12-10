@@ -150,7 +150,7 @@ const BookingMailSender = () => {
       }).then(async (result) => {
         if (result.isConfirmed) {
           await axios
-            .post("https://azure-reservation-app.azurewebsites.net/api/mail", {
+            .post("http://localhost:3000/api/mail", {
               emails,
               subject,
               message,

@@ -90,7 +90,7 @@ const MyBooking = () => {
   const fetchOrders = async () => {
     try {
       const response = await axios.post(
-        "https://azure-reservation-app.azurewebsites.net/api/bookings/customer",
+        "http://localhost:3000/api/bookings/customer",
         { customerEmail }
       );
       setOrders(
@@ -121,7 +121,7 @@ const MyBooking = () => {
       }).then(async (result) => {
         if (result.isConfirmed) {
           const res = await axios.delete(
-            `https://azure-reservation-app.azurewebsites.net/api/bookings/${bookingId}`
+            `http://localhost:3000/api/bookings/${bookingId}`
           );
           console.log("Booking canceled:", res.data);
           fetchOrders();
@@ -228,10 +228,10 @@ const MyBooking = () => {
                     alignItems: "center",
                     justifyContent: "flex-end",
                   }}
-                >
-                  <CancelButton onClick={() => handleCancelBooking(order._id)}>
-                    Cancel Booking
-                  </CancelButton>
+                >{order.state == 'booked' ? <CancelButton onClick={() => handleCancelBooking(order._id)}>
+                Cancel Booking
+              </CancelButton> : <Typography sx={{ fontSize : '20px', color: 'white' }} >Canceled</Typography>}
+                  
                 </Grid>
               </Grid>
             </RadiantBox>

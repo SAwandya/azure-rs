@@ -93,7 +93,7 @@ const AdminSeatConfigurator = () => {
       };
       console.log(requestBody);
       const response = await axios.post(
-        "https://azure-reservation-app.azurewebsites.net/api/seats/create",
+        "https://localhost:3000/api/seats/create",
         requestBody
       );
       toast.success("Theater added successfully!", {

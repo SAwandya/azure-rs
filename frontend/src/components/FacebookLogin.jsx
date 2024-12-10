@@ -52,7 +52,7 @@ const FacebookLogin = () => {
   }, [location, navigate]);
 
   const handleLogin = () => {
-    window.location.href = `https://azure-reservation-app.azurewebsites.net/api/auth/facebook`;
+    window.location.href = `http://localhost:3000/api/auth/facebook`;
   };
 
   return (
