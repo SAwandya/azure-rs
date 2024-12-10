@@ -14,12 +14,6 @@ export const AuthProvider = ({ children }) => {
     localStorage.setItem("token", token);
   };
 
-  const isLogedIn = () => {
-    if(!authToken){
-      navigate('/signin')
-    }
-  }
-
   const logout = () => {
     setAuthToken(null);
     localStorage.removeItem("token");

@@ -59,8 +59,6 @@ const NewDashboard = () => {
 
   const { authToken, isLogedIn } = useAuth();
 
-  isLogedIn();
-
   const [activeButton, setActiveButton] = useState("home");
 
   const selectedCard = useGameQueryStore((s) => s.selectedCard);
