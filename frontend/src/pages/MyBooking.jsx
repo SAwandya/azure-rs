@@ -229,9 +229,9 @@ const MyBooking = () => {
                     justifyContent: "flex-end",
                   }}
                 >
-                  <CancelButton onClick={() => handleCancelBooking(order._id)}>
-                    Cancel Booking
-                  </CancelButton>
+                  {order.state == 'booked' ? <CancelButton onClick={() => handleCancelBooking(order._id)}>
+                Cancel Booking
+              </CancelButton> : <Typography sx={{ fontSize : '20px', color: 'white' }} >Canceled</Typography>}
                 </Grid>
               </Grid>
             </RadiantBox>
