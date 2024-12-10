@@ -44,8 +44,6 @@ const RadiantBox = styled(Box)(({ theme }) => ({
   },
 }));
 
-
-
 const darkTheme = createTheme({
   palette: {
     mode: "dark",
