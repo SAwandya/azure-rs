@@ -17,11 +17,12 @@ import MenuIcon from "@mui/icons-material/Menu";
 import LogoutIcon from "@mui/icons-material/Logout";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { styled } from "@mui/system";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { useAuth } from "../Context/AuthContext";
 import ReactQRScanner from "react-qr-scanner"; // Import the QR scanner component
 import useUser from "../hooks/useUser";
 import mainLogo from "../assets/mainlogo.png";
+import ProtectedRoute from "./ProtectedRoute";
 
 const StyledAppBar = styled(AppBar)({
   background: "#001529",
@@ -121,6 +122,7 @@ const NewTopNavBar = () => {
   const currentUserRole = getCurrentUser().role;
 
   return (
+    <>
     <StyledAppBar position="fixed">
       <Container maxWidth={false}>
         <Toolbar disableGutters sx={{ py: 1.5 }}>
@@ -246,6 +248,7 @@ const NewTopNavBar = () => {
         </Toolbar>
       </Container>
     </StyledAppBar>
+    </>
   );
 };
 

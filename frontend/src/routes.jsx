@@ -129,10 +129,7 @@ const router = createBrowserRouter([
     path: "/slider",
     element: <ImageSlider2 />,
   },
-  {
-    path: "/newdashboard",
-    element: <NewDashboard />,
-  },
+ 
 ]);
 
 export default router;
