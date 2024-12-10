@@ -44,6 +44,8 @@ const RadiantBox = styled(Box)(({ theme }) => ({
   },
 }));
 
+
+
 const darkTheme = createTheme({
   palette: {
     mode: "dark",
@@ -55,7 +57,9 @@ const darkTheme = createTheme({
 
 const NewDashboard = () => {
 
-  const { authToken } = useAuth();
+  const { authToken, isLogedIn } = useAuth();
+
+  isLogedIn();
 
   const [activeButton, setActiveButton] = useState("home");
 
